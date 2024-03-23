@@ -42,21 +42,85 @@
     <div class="px-4 text-center">
         <div class="container">
             <main>
+                <!-- Formulario-->
                 <h4 class="mb-3 mt-2">Registro de Medicamentos</h4>
                 <form class="needs-validation mt-5"
                 action="https://formsubmit.co/joyssicruz5@gmail.com"
                 method="POST"
                 novalidate>
 
+                <!-- Estructura del formulario-->
                 <div class="row g-3">
+                    <!-- Nombre del medicamento-->
                     <div class="col-lg-5">
                         <label for="nombreP" class="form-label">Nombre del medicamento:</label>
-                        <input type="text" name="Nombre-P" class="form-control" id="nombrep"
+                        <input type="text" name="Nombre-P" class="form-control" id="nombreP"
                         placeholder="Ingrese el nombre del medicamento" required>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
                     </div>
                     <div class="invalid-feedback">
                         Debe ingresar el nombre del medicamento.
                     </div>
+                    <hr class="my-4">
+                    <!-- Descripción del medicamento utilizando un text-area -->
+                    <div class="col-lg-5">
+                        <label for="descripcionP" class="form-label">Descripción del medicamento:</label>
+                        <textarea name="Descripcion" id="descripcionP" cols="30" rows="5" 
+                        placeholder="Escriba aquí" required class="form-control"></textarea>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar la descripción del medicamento.
+                    </div>
+                    <hr class="my-4">
+                    <!-- Precio Unitario del medicamento-->
+                    <div class="col-lg-5">
+                        <label for="precioU" class="form-label">Precio Unitario:</label>
+                        <input type="text" name="Precio-U" class="form-control" id="precioU"
+                        placeholder="Ingrese el precio unitario" required>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar el precio unitario.
+                    </div>
+                    <hr class="my-4">
+                    <div class="col-lg-5">
+                        <!-- Precio del medicamento-->
+                        <label for="precio" class="form-label">Precio:</label>
+                        <input type="text" name="Precio" class="form-control" id="precio"
+                        placeholder="Ingrese el precio del medicamento" required>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar el precio del medicamento.
+                    </div>
+                    <hr class="my-4">
+                    <!-- Categoría del medicamento a través de una etiqueta SELECT-->
+                    <div class="col-lg-5">
+                        <label for="categoria" class="form-label">Categoria:</label>
+                        <select class="form-control" name="Categoria" id="categoria" required>
+                            <option selected>Selecciona</option>
+                            <option value="1">Biológico</option>
+                            <option value="2">Fitofármaco</option>
+                            <option value="3">Analgésicos</option>
+                            <option value="4">Solución Ótica</option>
+                        </select>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe seleccionar una categoria.
+                    </div>
+                    <hr class="my-4">
                 </div>
                 </form>
             </main>
