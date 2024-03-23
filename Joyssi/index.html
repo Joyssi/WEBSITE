@@ -8,7 +8,7 @@
     <!-- CDN de Bootstrap y Bootstrap icons-->
     <link rel="stylesheet" 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5TDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
     crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -18,7 +18,7 @@
 
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="#" class="d-flex align-items-center mb-3 mb-md-auto text-dark text-decoration-none">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <span class="fs-4">Farmacia Glorys</span>
             </a>
 
@@ -63,7 +63,6 @@
                     <div class="invalid-feedback">
                         Debe ingresar el nombre del medicamento.
                     </div>
-                    <hr class="my-4">
                     <!-- Descripción del medicamento utilizando un text-area -->
                     <div class="col-lg-5">
                         <label for="descripcionP" class="form-label">Descripción del medicamento:</label>
@@ -76,12 +75,10 @@
                     <div class="invalid-feedback">
                         Debe ingresar la descripción del medicamento.
                     </div>
-                    <hr class="my-4">
                     <!-- Precio Unitario del medicamento-->
                     <div class="col-lg-5">
                         <label for="precioU" class="form-label">Precio Unitario:</label>
-                        <input type="text" name="Precio-U" class="form-control" id="precioU"
-                        placeholder="Ingrese el precio unitario" required>
+                        <input type="number" min="1" max="10000" name="Precio-U" class="form-control" id="precioU" required>
                     </div>
                     <div class="valid-feedback">
                         ¡Correcto!
@@ -89,12 +86,10 @@
                     <div class="invalid-feedback">
                         Debe ingresar el precio unitario.
                     </div>
-                    <hr class="my-4">
                     <div class="col-lg-5">
                         <!-- Precio del medicamento-->
                         <label for="precio" class="form-label">Precio:</label>
-                        <input type="text" name="Precio" class="form-control" id="precio"
-                        placeholder="Ingrese el precio del medicamento" required>
+                        <input type="number" min="1" max="10000"  name="Precio" class="form-control" id="precio" required>
                     </div>
                     <div class="valid-feedback">
                         ¡Correcto!
@@ -102,16 +97,15 @@
                     <div class="invalid-feedback">
                         Debe ingresar el precio del medicamento.
                     </div>
-                    <hr class="my-4">
                     <!-- Categoría del medicamento a través de una etiqueta SELECT-->
                     <div class="col-lg-5">
-                        <label for="categoria" class="form-label">Categoria:</label>
+                        <label for="categoria" class="form-label">Categoría:</label>
                         <select class="form-control" name="Categoria" id="categoria" required>
                             <option selected>Selecciona</option>
-                            <option value="1">Biológico</option>
-                            <option value="2">Fitofármaco</option>
-                            <option value="3">Analgésicos</option>
-                            <option value="4">Solución Ótica</option>
+                            <option value="Biológico">Biológico</option>
+                            <option value="Fitofármaco">Fitofármaco</option>
+                            <option value="Analgésicos">Analgésicos</option>
+                            <option value="Solución Ótica">Solución Ótica</option>
                         </select>
                     </div>
                     <div class="valid-feedback">
@@ -120,12 +114,66 @@
                     <div class="invalid-feedback">
                         Debe seleccionar una categoria.
                     </div>
+                    <!-- Marca del medicamento a través de una etiqueta SELECT-->
+                    <div class="col-lg-5">
+                        <label for="marca" class="form-label">Marca:</label>
+                        <select class="form-control" name="Marca" id="marca" required>
+                            <option selected>Selecciona</option>
+                            <option value="RAMOS">RAMOS</option>
+                            <option value="PASHA S.A">PASHA S.A</option>
+                            <option value="NORDIC">NORDIC</option>
+                        </select>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe seleccionar una marca.
+                    </div>
+                     <div class="col-lg-5">
+                        <!-- Stock del medicamento-->
+                        <label for="stock" class="form-label">Cantidad en almacén:</label>
+                        <input type="number" min="1" max="10000"  name="Stock" class="form-control" id="stock" required>
+                    </div>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar una cantidad.
+                    </div>
                     <hr class="my-4">
                 </div>
                 </form>
             </main>
         </div>
     </div>
+    
+    <!-- CDN de JavaScript Bootstrap-->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous">
+    </script>
+
+    <!-- CND de JsPdf-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js">
+       
+       (() => {
+            'use strict'
+
+            const forms = document.querySelectorAll('.needs-validation')
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if(!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
     
 </body>
 </html>
