@@ -2,178 +2,248 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmacia Glorys</title>
-    
-    <!-- CDN de Bootstrap y Bootstrap icons-->
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
     crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/bootstrap-icon@1.9.1/font/bootstrap-icon.css">
+
 
 </head>
 <body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="fs-4">Farmacia Glorys</span>
+        </a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="">
+                    Facebook
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="">
+                    Whatsapp
+                    <i class="bi-whatsapp">
+                    </i>
+                </a>
+            </li>
+        </ul>
+    </header>
+</div>
 
+<div class="px-4 text-center">
     <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <span class="fs-4">Farmacia Glorys</span>
-            </a>
-
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/eliabjselvacruz" class="nav-link">
-                        Facebook
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/eliabjselvacruz" class="nav-link active">
-                        WhatsApp
-                        <i class="bi-whatsapp"></i>
-                    </a>
-                </li>
-            </ul>
-
-        </header>
-    </div>
-
-    <div class="px-4 text-center">
-        <div class="container">
-            <main>
-                <!-- Formulario-->
-                <h4 class="mb-3 mt-2">Registro de Medicamentos</h4>
-                <form class="needs-validation mt-5"
-                action="https://formsubmit.co/joyssicruz5@gmail.com"
-                method="POST"
-                novalidate>
-
-                <!-- Estructura del formulario-->
+        <main>
+            <h4 class="mb-3 mt-2">Registro de medicamentos</h4>
+            <form action="https://formsubmit.co/joyssicruz5@gmail.com" 
+            method="POST" 
+            class="needs-validation" 
+            novalidate
+            enctype="multipart/form-data">
                 <div class="row g-3">
-                    <!-- Nombre del medicamento-->
                     <div class="col-lg-5">
-                        <label for="nombreP" class="form-label">Nombre del medicamento:</label>
-                        <input type="text" name="Nombre-P" class="form-control" id="nombreP"
-                        placeholder="Ingrese el nombre del medicamento" required>
+                        <label for="nombre" class="form-label">Nombre del medicamento:</label>
+                        <input name="nombre" type="text" class="form-control" id="nombre"
+                               placeholder="Ingrese el nombre del medicamento" required />
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar el nombre del medicamento.
+                        </div>
                     </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
-                    </div>
-                    <div class="invalid-feedback">
-                        Debe ingresar el nombre del medicamento.
-                    </div>
-                    <!-- Descripción del medicamento utilizando un text-area -->
                     <div class="col-lg-5">
-                        <label for="descripcionP" class="form-label">Descripción del medicamento:</label>
-                        <textarea name="Descripcion" id="descripcionP" cols="30" rows="5" 
-                        placeholder="Escriba aquí" required class="form-control"></textarea>
+                        <label for="descripcion" class="form-label">Descripción:</label>
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="4" required
+                        placeholder="Escriba aquí" class="form-control"></textarea>
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe escribir aquí.
+                        </div>
                     </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
+                    <div class="col-lg-5">
+                        <label for="fecha" class="form-label">Fecha de vencimiento:</label>
+                        <input name="fecha" type="date" class="form-control" id="fecha" required />
+                        <div class="valid-feedback">
+                            ¡Correcto! Fecha válida.
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe seleccionar una fecha.
+                        </div>
                     </div>
-                    <div class="invalid-feedback">
-                        Debe ingresar la descripción del medicamento.
-                    </div>
-                    <!-- Precio Unitario del medicamento-->
                     <div class="col-lg-5">
                         <label for="precioU" class="form-label">Precio Unitario:</label>
-                        <input type="number" min="1" max="10000" name="Precio-U" class="form-control" id="precioU" required>
-                    </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
-                    </div>
-                    <div class="invalid-feedback">
-                        Debe ingresar el precio unitario.
+                        <input name="precioU" type="number" class="form-control" id="precioU" 
+                        min="1" max="10000" required />
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un precio.
+                        </div>
                     </div>
                     <div class="col-lg-5">
-                        <!-- Precio del medicamento-->
                         <label for="precio" class="form-label">Precio:</label>
-                        <input type="number" min="1" max="10000"  name="Precio" class="form-control" id="precio" required>
+                        <input name="precio" type="number" class="form-control" id="precio" 
+                        min="1" max="1000" required />
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un precio.
+                        </div>
                     </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
+                    <div class="col-lg-5">
+                        <label for="stock" class="form-label">Cantidad en almacén:</label>
+                        <input name="stock" type="number" class="form-control" id="stock" 
+                        min="1" max="1000" required />
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar una cantidad.
+                        </div>
                     </div>
-                    <div class="invalid-feedback">
-                        Debe ingresar el precio del medicamento.
-                    </div>
-                    <!-- Categoría del medicamento a través de una etiqueta SELECT-->
                     <div class="col-lg-5">
                         <label for="categoria" class="form-label">Categoría:</label>
-                        <select class="form-control" name="Categoria" id="categoria" required>
-                            <option selected>Selecciona</option>
-                            <option value="Biológico">Biológico</option>
-                            <option value="Fitofármaco">Fitofármaco</option>
-                            <option value="Analgésicos">Analgésicos</option>
-                            <option value="Solución Ótica">Solución Ótica</option>
+                        <select class="form-select" name="categoria" id="categoria" required>
+                            <option selected disabled value="">Selecciona</option>
+                            <option>Fitofármaco</option>
+                            <option>Bilógico</option>
                         </select>
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe seleccionar una opción.
+                        </div>
                     </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
-                    </div>
-                    <div class="invalid-feedback">
-                        Debe seleccionar una categoria.
-                    </div>
-                    <!-- Marca del medicamento a través de una etiqueta SELECT-->
                     <div class="col-lg-5">
                         <label for="marca" class="form-label">Marca:</label>
-                        <select class="form-control" name="Marca" id="marca" required>
-                            <option selected>Selecciona</option>
-                            <option value="RAMOS">RAMOS</option>
-                            <option value="PASHA S.A">PASHA S.A</option>
-                            <option value="NORDIC">NORDIC</option>
+                        <select class="form-select" name="marca" id="marca" required>
+                            <option selected disabled value="">Selecciona</option>
+                            <option>RAMOS</option>
+                            <option>PASHA S.A</option>
+                            <option>NORDIC</option>
                         </select>
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe seleccionar una opción.
+                        </div>
                     </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
+                    <div class="col-lg-5">
+                        <label for="presentacion" class="form-label">Presentación:</label>
+                        <select class="form-select" name="presentacion" id="presentacion" required>
+                            <option selected disabled value="">Selecciona</option>
+                            <option>Tableta</option>
+                            <option>Jarabe</option>
+                            <option>Solución Ótica</option>
+                            <option>Crema</option>
+                        </select>
+                        <div class="valid-feedback">
+                            ¡Correcto!
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe seleccionar una opción.
+                        </div>
                     </div>
-                    <div class="invalid-feedback">
-                        Debe seleccionar una marca.
-                    </div>
-                     <div class="col-lg-5">
-                        <!-- Stock del medicamento-->
-                        <label for="stock" class="form-label">Cantidad en almacén:</label>
-                        <input type="number" min="1" max="10000"  name="Stock" class="form-control" id="stock" required>
-                    </div>
-                    <div class="valid-feedback">
-                        ¡Correcto!
-                    </div>
-                    <div class="invalid-feedback">
-                        Debe ingresar una cantidad.
-                    </div>
-                    <hr class="my-4">
                 </div>
-                </form>
-            </main>
-        </div>
+                <hr class="my-4">
+                <button type="submit" class="btn btn-primary btn-lg" onclick="RegistrarMedicamento()">
+                    REGISTRAR 
+                </button>
+            </form>
+        </main>
     </div>
-    
-    <!-- CDN de JavaScript Bootstrap-->
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous">
-    </script>
+</div>
 
-    <!-- CND de JsPdf-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js">
-       
-       (() => {
-            'use strict'
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+crossorigin="anonymous">
+</script>
 
-            const forms = document.querySelectorAll('.needs-validation')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js">  
+</script>
+
+<script>
+ (() => {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
 
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
-                    if(!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
                     }
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-    </script>
-    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+</script>
+
+<script>
+
+function RegistrarMedicamento() {
+    // Obtener los valores ingresados en los campos del formulario de registro
+    const nombre = document.getElementById('nombre').value.trim();
+    const descripcion= document.getElementById('descripcion').value.trim();
+    const fecha = document.getElementById('fecha').value.trim();
+    const precioU = document.getElementById('precioU').value.trim();
+    const precio = document.getElementById('precio').value.trim();
+    const stock = document.getElementById('stock').value.trim();
+    const categoria = document.getElementById('categoria').value.trim();
+    const marca = document.getElementById('marca').value.trim();
+    const presentacion = document.getElementById('presentacion').value.trim();
+
+    // Verificar que los campos estén llenos antes de generar el PDF
+    if (nombre === '' || descripcion === ''||fecha === '' ||
+    precioU === '' || precio === '' || stock === '') {
+       
+        return;
+    }
+
+    const doc = new jsPDF();
+    doc.setFillColor(28, 41, 51);
+    doc.rect(0, 0, 220, 60, 'f');
+    doc.setFontSize(14);
+    doc.setFontType("bold");
+    doc.text(`Farmacia Glorys`, 12, 50);
+    // Agregar los datos al PDF
+    const content = `
+        Nombre del medicamento: ${nombre}
+        Descripción: ${descripcion}
+        Fecha de vencimiento: ${fecha}
+        Precio Unitario: ${precioU} C$
+        Precio: ${precio} C$
+        Cantidad en almacén: ${stock} Unidades
+        Categoría: ${categoria}
+        Marca: ${marca}
+        Presentación: ${presentacion}
+    `;
+    doc.setFontSize(12);
+    doc.text(content, 20, 70);
+
+    const docpdf = `FarmaciaGlorys.pdf`;
+    doc.save(docpdf);
+}
+
+</script>
+
+
+
+
 </body>
 </html>
