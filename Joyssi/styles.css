@@ -38,3 +38,21 @@ h4 {
 option {
     color:rgb(59, 102, 194);
 }
+
+.my-4 {
+    color:rgba(120, 192, 226, 0.671) ;
+}
+
+.page-footer {
+    background: rgba(125, 197, 231, 0.671);
+    color: rgb(12, 84, 146);
+}
+
+h5 {
+    margin-top: 20px;
+}
+
+.cr {
+    text-decoration: none;
+    color: rgb(12, 84, 146);
+}
