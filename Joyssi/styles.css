@@ -1,0 +1,40 @@
+/*Relleno de color del header*/
+.container-1 {
+    background: rgba(125, 197, 231, 0.671);
+}
+
+.fs-4 {
+    color: aliceblue;
+    font-style: italic;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 80px;
+}
+
+.img {
+    margin: 0 20px 0 20px;
+}
+
+/* Cambiar color de los label*/
+.form-label {
+    color: rgb(59, 102, 194);
+}
+
+/*Dar color al título del formulario*/
+h4 {
+    color: rgb(59, 102, 194);
+}
+
+/*Cambiar color del borde de los input*/
+.form-control {
+    border-color: rgba(125, 197, 231, 0.671);
+}
+
+/*Cambiar color del borde de los select*/
+.form-select {
+    border-color: rgba(125, 197, 231, 0.671);
+}
+
+option {
+    color:rgb(59, 102, 194);
+}
